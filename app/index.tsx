@@ -68,7 +68,7 @@ const Welcome = () => {
         </View>
       </ScrollView>
 
-      <StatusBar backgroundColor="#161622" style="light" />
+      <StatusBar style="light" />
     </SafeAreaView>
   );
 };

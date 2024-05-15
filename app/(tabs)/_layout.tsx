@@ -37,7 +37,7 @@ export default function TabsLayout() {
         options={{
           title: 'Detect',
           tabBarIcon({ color, size }) {
-            return <Sprout color={color} size={size} />;
+            return <ScanSearch color={color} size={size} />;
           },
           headerRight: () => <ThemeToggle />,
         }}
@@ -47,7 +47,7 @@ export default function TabsLayout() {
         options={{
           title: 'Monitor',
           tabBarIcon({ color, size }) {
-            return <ScanSearch color={color} size={size} />;
+            return < Sprout color={color} size={size} />;
           },
           headerRight: () => <ThemeToggle />,
         }}

@@ -64,22 +64,23 @@ export default function RootLayout() {
   return (
     <ThemeProvider value={isDarkColorScheme ? DARK_THEME : LIGHT_THEME}>
       <StatusBar style={isDarkColorScheme ? "light" : "dark"} />
-      <Stack
-        initialRouteName="index"
-      >
+      <Stack initialRouteName="index">
         <Stack.Screen
           name="(tabs)"
           options={{
             headerShown: false,
           }}
         />
+        <Stack.Screen 
+          name="(auth)" 
+          options={{ headerShown: false }} 
+        />
         <Stack.Screen
           name="index"
           options={{
-            headerTitle: '',
+            headerTitle: "",
             headerTransparent: true,
             headerRight: () => <ThemeToggle />,
-          
           }}
         />
 

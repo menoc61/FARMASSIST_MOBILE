@@ -1,5 +1,5 @@
 {
-  "name": "farmassistbeta",
+  "name": "farmassist",
   "main": "index.js",
   "version": "1.0.0",
   "scripts": {
@@ -38,6 +38,7 @@
     "react-hook-form": "^7.51.4",
     "react-native": "0.73.6",
     "react-native-calendars": "^1.1304.1",
+    "react-native-international-phone-number": "^0.7.6",
     "react-native-reanimated": "~3.6.2",
     "react-native-safe-area-context": "4.8.2",
     "react-native-screens": "~3.29.0",

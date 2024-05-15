@@ -1,6 +1,6 @@
 import { cva, type VariantProps } from 'class-variance-authority';
 import * as React from 'react';
-import { Pressable } from 'react-native';
+import { Pressable, ActivityIndicator, View } from 'react-native';
 import { TextClassContext } from '~/components/ui/text';
 import { cn } from '~/lib/utils';
 
@@ -11,6 +11,7 @@ const buttonVariants = cva(
       variant: {
         default: 'bg-primary web:hover:opacity-90 active:opacity-90',
         destructive: 'bg-destructive web:hover:opacity-90 active:opacity-90',
+        themed: 'bg-green-500  web:hover:opacity-90 active:opacity-90',
         outline:
           'border border-input bg-background web:hover:bg-accent web:hover:text-accent-foreground active:bg-accent',
         secondary: 'bg-secondary web:hover:opacity-80 active:opacity-80',
@@ -38,6 +39,7 @@ const buttonTextVariants = cva(
       variant: {
         default: 'text-primary-foreground',
         destructive: 'text-destructive-foreground',
+        themed: 'text-accent-foreground',
         outline: 'group-active:text-accent-foreground',
         secondary: 'text-secondary-foreground group-active:text-secondary-foreground',
         ghost: 'group-active:text-accent-foreground',
@@ -58,10 +60,12 @@ const buttonTextVariants = cva(
 );
 
 type ButtonProps = React.ComponentPropsWithoutRef<typeof Pressable> &
-  VariantProps<typeof buttonVariants>;
+  VariantProps<typeof buttonVariants> & {
+    loading?: boolean;
+  };
 
 const Button = React.forwardRef<React.ElementRef<typeof Pressable>, ButtonProps>(
-  ({ className, variant, size, ...props }, ref) => {
+  ({ className, variant, size, loading, children, ...props }, ref) => {
     return (
       <TextClassContext.Provider
         value={cn(
@@ -77,7 +81,14 @@ const Button = React.forwardRef<React.ElementRef<typeof Pressable>, ButtonProps>
           ref={ref}
           role='button'
           {...props}
-        />
+          disabled={loading || props.disabled}
+        >
+          {loading ? (
+            <ActivityIndicator size="small" color="#FFFFFF" />
+          ) : (
+            children
+          )}
+        </Pressable>
       </TextClassContext.Provider>
     );
   }

@@ -14,6 +14,8 @@ import {
   Check,
   ChevronUp,
   ChevronDown,
+  EyeOff,
+  Eye,
 } from "lucide-react-native";
 import { cssInterop } from "nativewind";
 
@@ -28,7 +30,6 @@ function interopIcon(icon: LucideIcon) {
     },
   });
 }
-LayoutGrid;
 interopIcon(Info);
 interopIcon(MoonStar);
 interopIcon(Sun);
@@ -43,6 +44,8 @@ interopIcon(X);
 interopIcon(Check);
 interopIcon(ChevronUp);
 interopIcon(ChevronDown);
+interopIcon(EyeOff);
+interopIcon(Eye);
 
 export {
   Info,
@@ -59,4 +62,6 @@ export {
   Check,
   ChevronUp,
   ChevronDown,
+  EyeOff,
+  Eye,
 };
